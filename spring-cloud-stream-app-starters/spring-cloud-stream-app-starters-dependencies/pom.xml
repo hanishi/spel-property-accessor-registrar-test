@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.example.euler.adapter.stream.app</groupId>
+    <artifactId>stream-app-starters-dependencies</artifactId>
+    <version>1.0.0.BUILD-SNAPSHOT</version>
+    <packaging>pom</packaging>
+    <name>stream-app-starters-dependencies</name>
+    <description>spring cloud stream app core bom</description>
+
+    <parent>
+        <artifactId>spring-cloud-dependencies-parent</artifactId>
+        <groupId>org.springframework.cloud</groupId>
+        <version>1.3.8.RELEASE</version>
+        <relativePath/>
+    </parent>
+
+    <properties>
+        <java.version>1.8</java.version>
+        <spring-cloud-stream-test-support-internal.version>1.3.2.RELEASE
+        </spring-cloud-stream-test-support-internal.version>
+        <spring-cloud-dependencies.version>Edgware.SR2</spring-cloud-dependencies.version>
+        <spring-cloud-services-config-client.version>1.6.1.RELEASE</spring-cloud-services-config-client.version>
+        <app-starters-test-support.version>1.0.4.RELEASE</app-starters-test-support.version>
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.springframework.cloud.stream.app</groupId>
+                <artifactId>app-starters-test-support</artifactId>
+                <version>${app-starters-test-support.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>${spring-cloud-dependencies.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-stream-test-support-internal</artifactId>
+                <version>${spring-cloud-stream-test-support-internal.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.pivotal.spring.cloud</groupId>
+                <artifactId>spring-cloud-services-starter-config-client</artifactId>
+                <version>${spring-cloud-services-config-client.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+    <repositories>
+        <repository>
+            <id>spring-milestones</id>
+            <name>Spring Milestones</name>
+            <url>https://repo.spring.io/milestone</url>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+    </repositories>
+</project>

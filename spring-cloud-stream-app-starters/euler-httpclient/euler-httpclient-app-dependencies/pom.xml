@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <artifactId>euler-httpclient-app-dependencies</artifactId>
+    <version>1.0.0.BUILD-SNAPSHOT</version>
+    <packaging>pom</packaging>
+    <name>euler-httpclient-app-dependencies</name>
+    <description>euler-httpclient app dependencies</description>
+
+    <parent>
+        <groupId>com.example.euler.adapter.stream.app</groupId>
+        <artifactId>stream-app-starters-dependencies</artifactId>
+        <version>1.0.0.BUILD-SNAPSHOT</version>
+        <relativePath>../../spring-cloud-stream-app-starters-dependencies</relativePath>
+    </parent>
+
+    <properties>
+        <aws.sdk.version>1.10.77</aws.sdk.version>
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>com.example.euler.adapter.stream.app</groupId>
+                <artifactId>spring-cloud-starter-stream-processor-euler-httpclient</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.example.euler.adapter.stream.app</groupId>
+                <artifactId>euler-httpclient-app-starters-test-support</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.amazonaws</groupId>
+                <artifactId>aws-java-sdk-s3</artifactId>
+                <version>${aws.sdk.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.amazonaws</groupId>
+                <artifactId>aws-java-sdk-core</artifactId>
+                <version>${aws.sdk.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+</project>
